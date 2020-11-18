@@ -1,19 +1,72 @@
+
+body {
+    color: #222;
+    background: #fff;
+    margin: 0px;
+    padding: 0px;
+}
+
 .title {
     font-weight: bold;
 }
 
 .main_content {
-    padding: 20px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .navbar_custom {
-    background-color: black;
+    background-color: royalblue;
     padding: 10px;
     font-size: 20px;
     color: white;
+    height: 65pxs;
 }
 
 .navbar_custom > a {
     color: white;
     margin-right: 10px;
+}
+
+.hero {
+    background-color: rgb(82, 121, 240);
+    color: white;
+    font-size: 14px;
+
+    padding: 50px 0px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.hero a {
+    color: white;
+    text-decoration: underline;
+}
+
+.hero-inner {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+
+.pypi-stats {
+    padding: 10px 0px;
+    background-color: rgb(182, 187, 193);
+    text-align: center;
+    border-top: 1px solid slategray;
+    border-bottom: 1px solid slategray;
+}
+
+.pypi-stats .stats {
+    display: inline-block;
+    min-width: 170px;
+    padding: 10px;
+    font-size: 16 px;
+    color: rgb(88, 69, 198);
 }
