@@ -1,0 +1,19 @@
+.title {
+    font-weight: bold;
+}
+
+.main_content {
+    padding: 20px;
+}
+
+.navbar_custom {
+    background-color: black;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.navbar_custom > a {
+    color: white;
+    margin-right: 10px;
+}
