@@ -1,7 +1,7 @@
 
 body {
-    /* color: #222; */
-    background: #fff;
+    background-color: #006dad;
+    /* background: #fff; */
     margin: 0px;
     padding: 0px;
 }
@@ -11,8 +11,9 @@ body {
 } */
 
 .main_content {
-    padding: 0px;
+    padding-bottom: 50px;
     margin: 0px;
+    background-color: #fff;
 }
 
 .hero {
@@ -90,4 +91,14 @@ body {
     font-style: italic;
     font-size: 16px;
     font-weight: normal;
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    color: white
+}
+
+footer a {
+    color: #3497ee;
 }
