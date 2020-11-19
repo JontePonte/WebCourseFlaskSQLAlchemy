@@ -1,6 +1,6 @@
 
 body {
-    color: #222;
+    /* color: #222; */
     background: #fff;
     margin: 0px;
     padding: 0px;
@@ -13,11 +13,6 @@ body {
 .main_content {
     padding: 0px;
     margin: 0px;
-}
-
-.navbar {
-    background-color: #0073B7;
-    color: #0073B7;
 }
 
 .hero {
