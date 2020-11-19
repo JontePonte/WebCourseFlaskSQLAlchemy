@@ -15,21 +15,13 @@ body {
     margin: 0px;
 }
 
-.navbar_custom {
-    background-color: royalblue;
-    padding: 10px;
-    font-size: 20px;
-    color: white;
-    height: 65pxs;
-}
-
-.navbar_custom > a {
-    color: white;
-    margin-right: 10px;
+.navbar {
+    background-color: #0073B7;
+    color: #0073B7;
 }
 
 .hero {
-    background-color: rgb(82, 121, 240);
+    background-color: #006DAD;
     color: white;
     font-size: 14px;
 
