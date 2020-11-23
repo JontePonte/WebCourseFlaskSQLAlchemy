@@ -1,27 +1,34 @@
-
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
 
+
 from pypi_org.data.modelbase import SqlAlchemyBase
 
-factory = None
+__factory = None
 
 
 def global_init(db_file: str):
-    global factory
+    global __factory
 
-    if factory:
+    if __factory:
         return
-    
+
     if not db_file or not db_file.strip():
         raise Exception("You must specify a db file.")
 
-    conn_str = 'sqlite:///' + db_file.strip()
-    print('Connecting to DB with {}'.format(conn_str))
+    conn_str = "sqlite:///" + db_file.strip()
+    print("Connecting to DB with {}".format(conn_str))
 
     engine = sa.create_engine(conn_str, echo=False)
-    factory = orm.sessionmaker(bind=engine)
+    __factory = orm.sessionmaker(bind=engine)
 
     # noinspection PyUnresolvedReferences
-    import pypi_org.data.__all_models   # all models imported from all_models
+    import pypi_org.data.__all_models  # all models imported from all_models
+
     SqlAlchemyBase.metadata.create_all(engine)
+
+
+# makes basic inserts look nicer
+def create_session() -> orm.Session:
+    global __factory
+    return __factory()
