@@ -41,7 +41,7 @@ def verify_hash(hashed_text: str, plain_text: str) -> bool:
     return crypto.verify(plain_text, hashed_text)
 
 
-def login_user(email: str, password:str) -> Optional[User]:
+def login_user(email: str, password: str) -> Optional[User]:
     session = db_session.create_session()
 
     user = session.query(User).filter(User.email == email).first()
@@ -50,5 +50,12 @@ def login_user(email: str, password:str) -> Optional[User]:
 
     if not verify_hash(user.hashed_password, password):
         return None
+
+    return user
+
+
+def find_user_by_id(user_id: int) -> Optional[User]:
+    session = db_session.create_session()
+    user = session.query(User).filter(User.id == user_id).first()
 
     return user
