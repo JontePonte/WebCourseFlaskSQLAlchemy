@@ -7,3 +7,12 @@
     padding: 10px;
     font-size: 16px;
 }
+
+#last_nav_link {
+    margin-right: 45px;
+}
+
+nav > a {
+    color: white;
+    margin-right: 10px;
+}

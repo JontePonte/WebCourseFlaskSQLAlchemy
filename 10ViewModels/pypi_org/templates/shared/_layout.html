@@ -32,10 +32,10 @@
             <li class="nav-item active"><a class="nav-list-item-settings" class="nav-link" href="#">Sponsor</a></li>
             {% if user_id %}
               <li class="nav-item active"><a class="nav-list-item-settings" class="nav-link" href="/account">Account</a></li>
-              <li class="nav-item active"><a class="nav-list-item-settings" class="nav-link" href="/account/logout">Logout</a></li>
+              <li class="nav-item active"><a class="nav-list-item-settings" class="nav-link" href="/account/logout" id="last_nav_link">Logout</a></li>
             {% else %}
               <li class="nav-item active"><a class="nav-list-item-settings" class="nav-link" href="/account/login">Log in</a></li>
-              <li class="nav-item active"><a class="nav-list-item-settings" class="nav-link" href="/account/register">Register</a></li>
+              <li class="nav-item active"><a class="nav-list-item-settings" class="nav-link" href="/account/register" id="last_nav_link">Register</a></li>
             {% endif %}
           </ul>
         </div>
