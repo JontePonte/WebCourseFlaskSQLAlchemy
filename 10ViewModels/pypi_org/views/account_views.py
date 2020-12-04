@@ -4,6 +4,8 @@ import pypi_org.services.user_service as user_service
 import pypi_org.infrastructure.cookie_auth as cookie_auth
 import pypi_org.infrastructure.request_dict as request_dict
 
+from pypi_org.viewmodels.account.index_viewmodel import IndexViewModel
+
 blueprint = flask.Blueprint("account", __name__, template_folder="templates")
 
 
@@ -12,18 +14,13 @@ blueprint = flask.Blueprint("account", __name__, template_folder="templates")
 
 @blueprint.route("/account")
 def index():
-    user_id = cookie_auth.get_user_id_via_auth_cookie(flask.request)
-
-    if not user_id:
-        return flask.redirect('/account/login')
-
-    user = user_service.find_user_by_id(user_id)
-    if not user:
+    vm = IndexViewModel() 
+    if not vm.user_id:
         return flask.redirect('/account/login')
 
     return flask.render_template(
         "account/index.html",
-        user=user
+        vm.to_dict()
         )
 
 
@@ -52,7 +49,7 @@ def register_post():
             password=password,
             error="Some required fields are missing.",
         )
-    # TOTO: Create the user
+
     user = user_service.create_user(name, email, password)
     if not user:
         return flask.render_template(
