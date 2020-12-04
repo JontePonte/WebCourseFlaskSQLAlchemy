@@ -5,6 +5,7 @@ import pypi_org.infrastructure.cookie_auth as cookie_auth
 import pypi_org.infrastructure.request_dict as request_dict
 
 from pypi_org.viewmodels.account.index_viewmodel import IndexViewModel
+from pypi_org.infrastructure.view_modifiers import response
 
 blueprint = flask.Blueprint("account", __name__, template_folder="templates")
 
@@ -13,15 +14,13 @@ blueprint = flask.Blueprint("account", __name__, template_folder="templates")
 
 
 @blueprint.route("/account")
+@response(template_file="account/index.html")
 def index():
     vm = IndexViewModel() 
     if not vm.user_id:
         return flask.redirect('/account/login')
 
-    return flask.render_template(
-        "account/index.html",
-        vm.to_dict()
-        )
+    return vm.to_dict()
 
 
 """ --------------- Register --------------- """
