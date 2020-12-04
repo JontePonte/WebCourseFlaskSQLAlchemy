@@ -31,4 +31,8 @@ def global_init(db_file: str):
 # makes basic inserts look nicer
 def create_session() -> orm.Session:
     global __factory
-    return __factory()
+
+    session: orm.Session = __factory()
+    session.expire_on_commit = False
+
+    return session
