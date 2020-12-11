@@ -18,8 +18,8 @@ blueprint = flask.Blueprint("account", __name__, template_folder="templates")
 @blueprint.route("/account")
 @response(template_file="account/index.html")
 def index():
-    vm = IndexViewModel() 
-    if not vm.user_id:
+    vm = IndexViewModel()
+    if not vm.user:
         return flask.redirect('/account/login')
 
     return vm.to_dict()
